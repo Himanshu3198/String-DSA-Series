@@ -1,29 +1,34 @@
-#include<bits/stdc++.h>
-#include<string>
+#include <bits/stdc++.h>
+#include <string>
 using namespace std;
 
-void isPalindrome(string s){
-	int count=0;
-    int l=s.length()-1;
-      
-      int start=0;
-      while(l>1){
-      	if(s[start++]==s[l--])
-      		count=1;  
-		
-	  }
-	  if(count){
-	  	cout<<"yes palindrome\n";
-	  }
-	  else{
-	  	cout<<" its not palindrome\n ";
-	  }
-	  
-   
+bool isPalindrome(string s)
+{
+	int count = 0;
+	int end = s.length() - 1;
+
+	int start = 0;
+	while (start < end)
+	{
+		if (s[start] != s[end])
+		{
+			return false;
+		}
+
+		start++;
+		end--;
+	}
+	return true;
 
 }
-int main(){
+	int main()
+	{
 
-    isPalindrome("abc");
-    return 0;
-}
+		if(isPalindrome("aba")){
+			cout<<"yes\n";
+		}
+		else{
+			cout<<"no\n";
+		}
+		return 0;
+	}
