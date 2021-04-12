@@ -65,3 +65,48 @@ int main()
 	return 0; 
 } 
 
+
+
+// class Solution {
+// public:
+//     string longestCommonPrefix(vector<string>& str) {
+       
+        
+//           if(str.size()==0){
+//             return "";
+//         }
+//         sort(str.begin(),str.end());
+//         char current;
+//         string ans;
+        
+       
+//         for(int row=0;row<str[0].size();row++){
+            
+//             current=str[0][row];
+//              bool flag=true;
+//             for(int col=1;col<str.size();col++){
+                
+//                 if(str[col][row]!=current){
+//                     flag=false;
+//                     break;
+//                 }
+                
+                
+//             }
+            
+//              if(flag == false){
+//                 break;
+//             }
+//             else{
+//                 ans += current;
+//             }
+            
+//         }
+        
+//         return ans;
+        
+        
+        
+//     }
+// };
+
