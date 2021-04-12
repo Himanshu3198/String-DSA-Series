@@ -1,11 +1,11 @@
-//https://www.codechef.com/APRIL21C/submit/SSCRIPT
+// https://www.codechef.com/APRIL21C/problems/SSCRIPT
 #include <bits/stdc++.h>
 using namespace std;
 
 bool solve(string s, int n, int k)
 {
 
-    stack<char> st;
+//     stack<char> st;
     
     int count=0;
     for(int i=0;i<s.length();i++){
