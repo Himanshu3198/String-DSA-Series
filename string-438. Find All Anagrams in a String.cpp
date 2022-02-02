@@ -1,70 +1,52 @@
-438. Find All Anagrams in a String
-
 class Solution {
 public:
-    
-    
-    bool isAnagram(string s,string t){
-            vector<int>count(26,0);
-        
-        int n=s.length();
-        int m=t.length();
-        
-        if(n!=m){
-            return false;
-        }
-        
-        
-        for(int i=0;i<max(n,m);i++){
-            
-            
-            count[s[i]-'a']++;
-            count[t[i]-'a']--;
-        }
-        
-        
-        for(int i=0;i<26;i++){
-            
-            
-            if(count[i]>=1){
-                return false;
-            }
-        }
-        return true;
-    }
+
     vector<int> findAnagrams(string s, string p) {
         
-     int n = p.size();
-    unordered_map<char, int> m;
-    for(auto i : p)
-        m[i]++;
-    
-    unordered_map<char, int> tm = m;
-    vector<int> ans;
-    
-    int i = 0;
-    for(int j = 0; j < s.size(); j++)
-    {
-        if(m.find(s[j]) == m.end())
-        {
-            m = tm, i = j + 1;
-            continue;
-        }
+          int n=s.size(),k=p.size();
         
-        if(m[s[j]] == 0)
-        {
-            m[s[i++]]++;
-            j--;
-            continue;
-        }
-        
-        m[s[j]]--;
+          long long int hash=0;
+    
+        for( char c:p){
             
-        if(j - i + 1 == n)
-            ans.push_back(i);            
+            long long int x=c-'a';
+            hash+=(x*x*x);
+        }
+            
+        int i=0,j=0,count=0;
+        
+         
+        vector<int>res;
+            long long int currHash=0;
+        
+          while(j<k){
+              long long int x=s[j]-'a';
+            currHash+=(x*x*x);
+              j++;
+         }
+        cout<<j;
+        if(currHash==hash){
+            res.push_back(j-k);
+        }
+        while(j<n){
+    
+              long long int x=s[j]-'a';
+
+              currHash+=(x*x*x);
+            long long int y=s[i]-'a';
+            currHash=currHash-(y*y*y);
+             
+                    i++;
+                 if(currHash==hash){
+                   res.push_back(i);  
+                 }
+            j++;
+        }
+        
+        return res;
+             
+  
     }
-    
-    return ans;
-}
-    
 };
+static bool     _foo = ios::sync_with_stdio(false);
+static ostream* _bar = cin.tie(NULL);
