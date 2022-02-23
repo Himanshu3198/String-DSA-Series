@@ -1,5 +1,8 @@
 
-//  write a program to prints number of words repeating greater than equal to k in a string
+//  write a program to prints number of words repeating greater than equal to k in a lexicographically order
+
+//  time complexity O(n)
+// space complexity O(1)
 #include<bits/stdc++.h>
 using namespace std;
 
