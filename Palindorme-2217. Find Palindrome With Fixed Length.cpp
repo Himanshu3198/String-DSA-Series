@@ -1,5 +1,5 @@
 //  time complexity O(n)
-//  space complexiy O(n/2)
+//  space complexiy O(1)
 class Solution {
 public:
     vector<long long> kthPalindrome(vector<int>& queries, int intLength) {
