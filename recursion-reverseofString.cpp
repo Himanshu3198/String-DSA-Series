@@ -1,19 +1,10 @@
-#include<bits/stdc++.h>
-#include<string>
-using namespace std;
-
- void reverse(string s){
-
-     if(s.length()==0){
-         return;
-     }
-     string ros=s.substr(1);
-     cout<<ros<<"\n";
-     reverse(ros);
-    
- }
-
-int main(){
-    reverse("ram");
-    return 0;
-}
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        int n=s.size();
+        int left=0,right=n-1;
+        while(left<right){
+            swap(s[left++],s[right--]);
+            }
+    }
+};
