@@ -48,3 +48,30 @@ public:
         return res;
     }
 };
+
+
+// *************************java code*********************************
+
+
+
+import java.util.*;  
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+          List<List<String>>res=new ArrayList<>();
+          HashMap<String,List<String>>hm =new HashMap<String,List<String>>();
+          for(int i=0;i<strs.length;i++){
+              String t=(String)strs[i];
+              char temp[]=t.toCharArray();
+              Arrays.sort(temp);
+              t=new String(temp);
+              if(hm.get(t)==null)
+                  hm.put(t,new ArrayList<String>());
+              hm.get(t).add(strs[i]);
+          }
+          // for(String it:hm.keySet()){
+          //     res.add(hm.get(it));
+          // }
+          // return res;
+          return hm.values().stream().collect(Collectors.toList());
+    }
+}
